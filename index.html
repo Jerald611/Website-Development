@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kompletong Gabay sa Pagsasaka ng Palay: Mga Tip at Solusyon sa Karaniwang Problema">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kompletong Gabay sa Pagsasaka ng Palay</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #c9c9ce; /* Light Gray Background */
+            color: #333; /* Dark Gray Text for readability */
+            line-height: 1.6;
+        }
+
+        /* Global Styles */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #2a2a2a; /* Slightly darker text for headers */
+        }
+
+        /* Header and Navigation */
+        header {
+            background: linear-gradient(135deg, #615656, #ddbe8e); /* Soft light gradient */
+            padding: 20px 0;
+            box-shadow: 5 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header .logo h1 {
+            color: #2a2a2a;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header ul li {
+            margin-left: 30px;
+        }
+
+        header ul li a {
+            color: #0c0c0c;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        header ul li a:hover {
+            color: #111010; /* Orange accent for hover */
+        }
+
+        /* Hero Section */
+        /* Hero Section Animation */
+.hero {
+    animation: fadeIn 2s ease-out;
+}
+
+/* Fade-In Effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+        .hero {
+            background-image: url('https://img.freepik.com/premium-photo/farmers-are-planting-rice-farm-farmers-bend-grow-rice-agriculture-asia-cultivation-using-people_41722-1571.jpg?w=1800');
+            background-size: cover;
+            background-position: center;
+            color: #0e0d0d;
+            text-align: center;
+            padding: 120px 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(230, 226, 226, 0.2); /* Light dark overlay */
+        }
+
+        .hero .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+/* Call-to-Action Button Hover Animation */
+.cta-btn {
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Button Hover Animation */
+.contact-section button {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+        .cta-btn {
+            background-color: #ff5722; /* Bright orange for call-to-action */
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+            border-radius: 25px;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 80px 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2a2a2a;
+            margin-bottom: 30px;
+        }
+
+        .tips {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .tips:hover {
+            transform: translateY(-10px);
+        }
+
+        .tips h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #4CAF50; /* Fresh green for tips headers */
+        }
+
+        .tips p {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Blog Section */
+        .blog-posts {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .post {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 48%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .post h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2a2a2a;
+            margin-bottom: 15px;
+        }
+
+        .post p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .post a {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .post a:hover {
+            color: #e64a19;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: #ffffff;
+            padding: 50px 20px;
+            margin-top: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2a2a2a;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-section form {
+            display: grid;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section input, .contact-section textarea {
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-section input:focus, .contact-section textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        .contact-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            color: #333;
+            margin-top: 60px;
+            font-size: 16px;
+        }
+
+        footer p {
+            font-weight: 400;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .cta-btn {
+                padding: 12px 25px;
+            }
+
+            .blog-posts {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .post {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .content-section h2, .contact-section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Gabay sa Pagsasaka ng Palay</h1>
+            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gabay">Gabay sa Pagsasaka</a></li>
+                <li><a href="#problema">Problema</a></li>
+                <li><a href="#solusyon">Solusyon</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Kompletong Gabay sa Pagsasaka ng Palay</h2>
+            <p>Ang pagsasaka ng palay ay isang mahalagang aspeto ng agrikultura sa Pilipinas, at isa sa mga pangunahing pinagkukunan ng pagkain at kabuhayan ng maraming pook sa bansa. Sa gabay na ito, layunin naming ibahagi ang komprehensibong kaalaman at mga praktikal na hakbang sa pagsasaka ng palay—mula sa paghahanda ng lupa, tamang pagtatanim, pangangalaga ng mga tanim, hanggang sa pag-aani at pag-iimbak. Pinagtuunan ng pansin ang mga makabagong teknolohiya at mga teknik na makakatulong sa pagpapabuti ng ani at kalidad ng palay, pati na rin ang mga tip sa pag-iwas sa mga karaniwang problema at sakit na maaaring makaapekto sa mga tanim.</p>
+            <p>Ang gabay na ito ay nilikha hindi lamang para sa mga baguhan sa larangan ng pagsasaka, kundi pati na rin sa mga nais magpalago ng kanilang kaalaman at kasanayan sa mas epektibong pamamahala ng kanilang sakahan. Magsimula tayo sa mga pangunahing hakbang sa pagtatanim ng palay at magtulungan upang mapabuti ang ating produksyon ng palay, na magdudulot ng mas mataas na kita at masaganang ani.</p>
+            <a href="#gabay" class="cta-btn">Basahin ang Gabay</a>
+        </div>
+    </section>
+
+    <!-- Gabay sa Pagsasaka Section -->
+    <section id="gabay" class="content-section">
+        <h2>Gabay sa Pagsasaka ng Palay</h2>
+        <p>Basahin ang sumusunod:</p>
+        <div class="tips">
+            <h3>Paghahanda ng Lupa</h3>
+            <img src="/images/maxresdefault.jpg"/>
+            <p>Ang paghahanda ng lupa ay isang napakahalagang hakbang sa matagumpay na pagsasaka ng palay. Ang tamang paghahanda ng lupa ay nakakatulong upang magkaroon ng malusog na paglago ang mga halaman at makamit ang mataas na ani. Narito ang mga hakbang at pamamaraan sa paghahanda ng lupa bago magtanim ng palay:</p>
+            <p>1. Pagpili ng Tamang Lupa
+                Bago magsimula sa paghahanda ng lupa, mahalagang tiyakin na ang lupa ay angkop para sa pagtatanim ng palay. Ang mga sumusunod ay ilang mga katangian ng lupa na dapat isaalang-alang:
+                
+                Loam na Lupa: Ang loam ay itinuturing na pinakamainam na uri ng lupa para sa palay. Ang lupa na may tamang kombinasyon ng buhangin, putik, at luad ay nagpapahintulot ng sapat na pag-agos ng tubig at sustansya para sa mga tanim.
+                Malusog na Lupa: Siguraduhin na ang lupa ay hindi masyadong matigas o matabang, dahil maaaring maging hadlang ito sa pag-usbong ng ugat ng palay.
+                Malinis na Lupa: Iwasan ang mga lupa na may mga damo o kontaminasyon ng mga sakit na maaaring makapinsala sa mga tanim.</p>
+            <p>2. Pag-ayos ng Lupa
+                Ang susunod na hakbang ay ang pag-aayos ng lupa upang maging handa sa pagtatanim. Kabilang dito ang mga sumusunod:
+                
+                Pagbabaligtad ng Lupa: Sa pamamagitan ng paggamit ng plow o kaya ng harrow, baligtarin ang lupa upang matanggal ang mga ugat ng damo at magaan ang pagkakaayos ng lupa. Ang prosesong ito ay nakakatulong din sa pagpapabuti ng pagkaka-halo ng lupa at mga sustansya.
+                Pagpapababa ng Lupa (Leveling): Kung ang lupa ay may hindi pantay na surface, mahalaga itong i-level upang ang tubig ay hindi magtangkang mag-ipon sa ilang bahagi. Ang wastong lebel ng lupa ay makakatulong sa pantay na distribusyon ng tubig sa buong sakahan.
+                Pagpapaluwag ng Lupa (Tilling): Gamit ang rotavator o mga kamay na kagamitan, ang pagtanggal ng mga malalaking bato at mga clumps ng lupa ay nakakatulong upang maging magaan ang lupa at mas madali itong pasukin ng mga ugat ng palay.</p>
+            <p>3. Pagpapabuti ng Kalidad ng Lupa
+                Bago magtanim ng palay, mahalaga ring tiyakin na may sapat na nutrisyon ang lupa. Narito ang ilang mga hakbang upang mapabuti ang kalidad ng lupa:
+                
+                Paglalagay ng Abono: Ang pagpapabuti ng kalidad ng lupa ay nangangailangan ng tamang dosis ng organikong pataba at inorganikong fertilizers. Ang mga organikong pataba tulad ng compost at manures ay nagbibigay ng natural na sustansya sa lupa. Ang mga inorganikong fertilizers naman tulad ng urea, ammonium sulfate, at superphosphate ay magpapalakas sa pag-usbong ng mga halaman.
+                
+                Pag-aerate ng Lupa: Mahalaga ang sapat na pag-aerate ng lupa upang matulungan ang mga ugat ng palay na makahinga at masustansya. Ang tamang aeration ay nakakatulong din sa pagpigil ng pagkakaroon ng mga impeksyon sa ugat.
+                
+                Pag-audit ng pH Level: Ang pH level ng lupa ay isang mahalagang salik sa pagtatanim ng palay. Karamihan sa palay ay mas maganda ang paglago kapag ang pH level ng lupa ay nasa pagitan ng 5.5 hanggang 7.0. Kung ang pH level ng lupa ay masyadong acidic (mababa sa 5.5), maaaring magdagdag ng dolomite lime upang itaas ito. Kung masyado namang alkaline (higit sa 7.0), maaaring magdagdag ng sulfur upang pababain ang pH.</p>
+            <p>Ang maayos na paghahanda ng lupa ay isang kritikal na bahagi ng matagumpay na pagsasaka ng palay. Sa pamamagitan ng tamang hakbang at mga praktikal na pamamaraan, makakamtan ang malusog na mga tanim at mataas na ani. Tiyakin na ang lahat ng mga hakbang na nabanggit ay naisakatuparan upang mapaghandaan ang paglago at pag-aani ng palay sa iyong sakahan.</p>
+            </div>
+        <div class="tips">
+            <h3>Pagpili ng Binhi</h3>
+            <img src="images/e-Binhi.jpg"/>
+            <p>Ang tamang pagpili ng binhi ay mahalaga upang matiyak ang magandang paglago at mataas na ani ng palay. Narito ang mga pangunahing konsiderasyon sa pagpili ng binhi:</p>
+            <p>Uri ng Binhi
+
+                Certified Seeds: Pumili ng mga binhing sertipikado ng mga ahensya tulad ng DA (Department of Agriculture) upang matiyak ang kalidad at purity ng binhi. Ang mga certified seeds ay may mataas na germination rate at malusog na katangian.
+                Hybrid vs. Inbred:
+                Hybrid Seeds: Mas mataas ang ani at mas matibay laban sa mga sakit, pero mas mahal at kailangan ng mataas na teknolohiya sa pagtatanim.
+                Inbred Seeds: Mas mura at mas madaling alagaan, ngunit ang ani ay hindi kasing taas ng hybrid.
+                Pagkaka-angkop sa Klima at Lupa
+                Pumili ng binhi na akma sa klima at uri ng lupa ng iyong sakahan. Ang ilang varieties ay mas angkop sa mga lugar na may mataas na altitud o sa mga lugar na may mas maiinit na temperatura.
+                
+                Resistensya sa Sakit at Peste
+                Tiyakin na ang binhi ay may natural na resistensya laban sa mga karaniwang sakit at peste sa iyong lugar, tulad ng tungro at bakterya. Ito ay makakatulong sa pag-iwas sa mga problema sa paglago ng palay.
+                
+                Germination Rate
+                Piliin ang mga binhi na may mataas na germination rate (higit sa 85%). Ang mataas na germination rate ay nangangahulugang maraming buto ang tutubo at magiging malusog na halaman.
+                
+                Pagkaangkop sa Anyo ng Pagtatanim
+                Kung gumagamit ka ng systemang SRI (System of Rice Intensification) o conventional rice farming, tiyakin na ang napiling binhi ay akma sa metodolohiyang ito upang mas madali at epektibong makamit ang magandang ani.</p>
+            <p>Ang tamang pagpili ng binhi ay may malaking epekto sa kalidad ng iyong ani. Siguraduhing ang binhi ay mataas ang kalidad at angkop sa iyong sakahan upang matamo ang pinakamataas na posibleng ani.</p>
+            </div>
+        <div class="tips">
+            <h3>Pataba at Pestisidyo</h3>
+            <img src="images/491f6b22695c948542f01b927017d703_1280x.webp"/>
+            <p>Ang tamang paggamit ng pataba at pestisidyo ay mahalaga upang mapabuti ang paglago ng palay at maprotektahan ito mula sa mga sakit at peste. Narito ang mga gabay sa paggamit ng mga ito:</p>
+            <p>Pataba (Fertilizers)
+                Uri ng Pataba
+                
+                Inorganikong Pataba: Nagbibigay ng mabilis na nutrisyon sa mga halaman. Halimbawa, ang urea (para sa nitrogen) ay tumutulong sa malusog na pag-usbong ng mga dahon, at superphosphate (para sa phosphorus) ay mahalaga para sa root development at flowering.
+                Organikong Pataba: Ang mga compost, manure, at iba pang organikong materyales ay mabuti para sa pagpapabuti ng istruktura ng lupa at pagpapanatili ng kasapatan ng mga sustansya sa mahabang panahon.
+                Paglalagay ng Pataba
+                
+                Basal Application: Mag-apply ng pataba bago magtanim, lalo na ang mga phosphorus at potassium fertilizers, upang matulungan ang mga ugat na lumago ng maayos.
+                Topdressing: Magdagdag ng nitrogen-based fertilizers kapag ang palay ay nasa tillering (pagtubo ng mga sanga) at panicle initiation (paghahanda ng mga bulaklak).
+                Pag-iwas sa Over-fertilization: Masyadong maraming pataba, lalo na ng nitrogen, ay maaaring magdulot ng sobrang dahon at mababang ani.
+                Pagsubok sa Lupa
+                Bago mag-apply ng pataba, mahalaga ang pagsusuri ng lupa upang malaman kung anong mga sustansya ang kulang. Ang soil test ay makakatulong sa tamang dosis ng pataba na kinakailangan.</p>
+            <p>Pestisidyo (Pesticides)
+                Pagkontrol sa mga Peste
+                
+                Insecticides: Gamitin lamang kung kinakailangan upang kontrolin ang mga insekto tulad ng rice planthopper, brown plant hopper, at thrips. Pumili ng pestisidyong mababa ang toxicity sa mga benepisyaryong insekto (tulad ng mga ladybug) at hindi magdudulot ng matinding epekto sa kalikasan.
+                Fungicides: Para sa mga fungal diseases tulad ng tungro at blast, mahalaga ang pag-spray ng fungicides sa tamang oras. Iwasan ang labis na paggamit upang hindi mag-develop ang resistance ng mga fungi.
+                Pagpili ng Tamang Pestisidyo
+                Pumili ng mga pestisidyong akma sa iyong lugar at uri ng sakit o peste. Mahalaga ang mga pestisidyo na may selective action, na nangangahulugang hindi nito pinapatay ang mga natural na kalaban ng peste (biological control).
+                
+                Integrated Pest Management (IPM)
+                
+                Cultural Practices: Gamitin ang mga praktikal na pamamaraan tulad ng crop rotation, paggamit ng resistant varieties, at tamang pagtatanim upang bawasan ang pangangailangan sa kemikal.
+                Biological Control: Isama ang mga natural na kaaway ng peste tulad ng mga parasitoid wasps, mga ibon, o mga beneficial insects sa pagpapabuti ng pest control.
+                Pagtangkilik sa Organikong Pagtatanim
+                Kung nais mong iwasan ang paggamit ng kemikal, maaari kang gumamit ng organikong pestisidyo tulad ng neem oil o mga natural na solusyon laban sa mga peste.</p>
+            <p>Mga Paalala sa Paggamit ng Pataba at Pestisidyo
+                Tamang Oras ng Aplikasyon: Iwasan ang pag-apply ng mga pataba at pestisidyo tuwing maulan o mataas ang hangin upang maiwasan ang pag-aksaya at kontaminasyon ng kapaligiran.
+                Pagsunod sa Label: Sundin ang mga tagubilin sa mga label ng pataba at pestisidyo upang maiwasan ang overdose at maprotektahan ang mga tao, hayop, at kalikasan.</p>
+            <p>Ang tamang pag-aalaga gamit ang pataba at pestisidyo ay makakatulong upang mapabuti ang kalusugan ng iyong mga tanim at makamit ang mataas na kalidad ng ani.</p>
+            </div>
+    </section>
+
+    <!-- Karaniwang Problema Section -->
+    <section id="problema" class="content-section">
+        <h2>Karaniwang Problema sa Pagsasaka ng Palay</h2>
+        <p>Alamin ang mga karaniwang problema na kinahaharap ng mga magsasaka at paano ito malulutas.</p>
+        <ul>
+            <li>Pagkakaroon ng peste at insekto.</li>
+            <li>Sakit sa palay tulad ng Rice Blast.</li>
+            <li>Hindi pantay na pagdami ng palay.</li>
+        </ul>
+    </section>
+
+    <!-- Solusyon Section -->
+    <section id="solusyon" class="content-section">
+        <h2>Mga Solusyon sa Karaniwang Problema</h2>
+        <p>Mga pamamaraan upang malutas ang mga problema sa iyong palayan at matiyak ang mataas na ani.</p>
+        <ul>
+            <li>1. Peste at Insekto
+                Integrated Pest Management (IPM): Pagsasama ng biological control agents (tulad ng mga ladybug), organic insecticides, at mga resistant na varieties ng palay.
+                Pagtanggal ng mga damo at regular na paglilinis: Binabawasan nito ang tirahan ng mga peste.</li>
+            <li>2. Sakit sa Palay (Rice Blast)
+                Pagtatanim ng resistant na varieties: Piliin ang mga palay na may resistensya sa Rice Blast.
+                Fungicides: Pag-spray ng fungicides kung kinakailangan.
+                Pag-aalaga sa tamang agroteknolohiya: Tamang spacing, patubig, at fertilization.</li>
+            <li>3. Hindi Pantay na Pagdami ng Palay
+                Wastong pamamahagi ng binhi: Siguraduhing hindi masyadong siksik ang pagtatanim.
+                Tamang fertilization at irigasyon: Pagtutok sa tamang pag-aalaga ng lupa at halaman upang maging pantay-pantay ang paglago.
+                Pagtukoy at pagpapabuti ng kalidad ng binhi: Gumamit ng certified seeds.</li>
+            <ul>4. Iba pang Solusyon
+                Crop rotation: Pagpapalit ng mga tanim upang maiwasan ang build-up ng peste at sakit.
+                Pagsasanay sa mga magsasaka: Regular na edukasyon tungkol sa mga bagong teknolohiya at pamamaraan sa pagsasaka.</ul>
+            <p>Ang mga hakbang na ito ay makakatulong upang maiwasan at malutas ang mga problema sa palayan.</p>
+            </ul>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="content-section">
+        <h2>Blog</h2>
+        <p>Basahin ang mga artikulo para sa karagdagang kaalaman sa pagsasaka ng palay.</p>
+        <div class="blog-posts">
+            <div class="post">
+                <h3>Ang Kahalagahan ng Pagpili ng Tamang Binhi</h3>
+                <p>Matutunan ang tamang pagpili ng binhi upang mapabuti ang iyong ani...</p>
+                <a href="#">Magbasa Pa</a>
+            </div>
+            <div class="post">
+                <h3>Paano Maiiwasan ang Mga Karaniwang Sakit sa Palay?</h3>
+                <p>Alamin ang mga solusyon para maiwasan ang mga sakit na madalas mangyari sa palayan...</p>
+                <a href="#">Magbasa Pa</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section">
+        <h2>Makipag-ugnayan sa Amin</h2>
+        <form id="contactForm">
+            <label for="name">Pangalan:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensahe:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Ipadala</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright © 2024 Gabay sa Pagsasaka ng Palay</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact Form Validation
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(event) {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                event.preventDefault();
+                alert('Pakiusap, punan ang lahat ng mga kinakailangang field!');
+            }
+        });
+    </script>
+</body>
+</html>
